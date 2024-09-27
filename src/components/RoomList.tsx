@@ -18,8 +18,11 @@ export default function RoomList() {
   ])
 
   const joinRoom = (roomId: string) => {
-    // Redirigir usando window.location para navegar a la sala
     window.location.href = `/sala/${roomId}`
+  }
+
+  const handleBackToMenu = () => {
+    window.location.href = "/";
   }
 
   return (
@@ -55,11 +58,10 @@ export default function RoomList() {
 
         <div className="mt-8 flex justify-between">
           <Button 
-            asChild 
+            onClick={handleBackToMenu}
             className="bg-red-500 hover:bg-red-600 text-white"
-            onClick={() => window.location.href = '/'} // Redirigir al inicio
           >
-            VOLVER
+            VOLVER AL MENÚ
           </Button>
           <Button onClick={() => window.location.href = '/crear-sala'} className="bg-green-500 hover:bg-green-600 text-white">
             CREAR SALA

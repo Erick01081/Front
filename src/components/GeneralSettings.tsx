@@ -4,14 +4,13 @@ import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
+
 export default function GeneralSettings() {
   const [settings, setSettings] = useState({
     musicVolume: 50,
     soundEffectsVolume: 75,
     language: 'es',
-    darkMode: true,
     showFPS: false,
-    graphicsQuality: 'high',
   })
 
   const updateSetting = (key: string, value: any) => {
@@ -69,36 +68,11 @@ export default function GeneralSettings() {
       </div>
 
       <div className="flex items-center justify-between">
-        <label className="text-white text-lg">Modo Oscuro</label>
-        <Switch
-          checked={settings.darkMode}
-          onCheckedChange={(checked) => updateSetting('darkMode', checked)}
-        />
-      </div>
-
-      <div className="flex items-center justify-between">
         <label className="text-white text-lg">Mostrar FPS</label>
         <Switch
           checked={settings.showFPS}
           onCheckedChange={(checked) => updateSetting('showFPS', checked)}
         />
-      </div>
-
-      <div>
-        <label className="text-white text-lg mb-2 block">Calidad Gráfica</label>
-        <Select 
-          value={settings.graphicsQuality} 
-          onValueChange={(value) => updateSetting('graphicsQuality', value)}
-        >
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder="Selecciona la calidad gráfica" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="low">Baja</SelectItem>
-            <SelectItem value="medium">Media</SelectItem>
-            <SelectItem value="high">Alta</SelectItem>
-          </SelectContent>
-        </Select>
       </div>
 
       <div className="mt-8 flex justify-end">

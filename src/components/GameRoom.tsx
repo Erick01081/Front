@@ -35,8 +35,6 @@ export default function GameRoom({ roomId }: { roomId: string }) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000)
       return () => clearTimeout(timer)
     } else if (countdown === 0) {
-      // Aquí puedes redirigir a la página de juego usando tu lógica de enrutamiento
-      // Por ejemplo, usando window.location.href
       window.location.href = `/game/${roomId}`
     }
   }, [countdown, roomId])
@@ -109,11 +107,14 @@ export default function GameRoom({ roomId }: { roomId: string }) {
         )}
 
         <div className="mt-8 flex justify-between">
-          <Button onClick={() => window.location.href = '/ver-salas'} className="bg-red-500 hover:bg-red-600 text-white">
+          <Button onClick={() => window.location.href = '/salas'} className="bg-red-500 hover:bg-red-600 text-white">
             ABANDONAR SALA
           </Button>
           <Button onClick={() => window.location.href = `/spectate/${roomId}`} className="bg-blue-500 hover:bg-blue-600 text-white">
             MODO ESPECTADOR
+          </Button>
+          <Button onClick={() => window.location.href = `/sala/${roomId}/settings`} className="bg-yellow-500 hover:bg-yellow-600 text-white">
+            AJUSTES DEL JUEGO
           </Button>
         </div>
       </div>

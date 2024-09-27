@@ -1,11 +1,15 @@
 import { useEffect } from 'react'
+import { redirect, useParams } from 'react-router-dom';
+
 import GameRoom from '../../components/GameRoom'
 
-interface SalaPageProps {
-  roomId: string;
-}
+export default function SalaPage() {
+  const { roomId } = useParams()
 
-export default function SalaPage({ roomId }: SalaPageProps) {
+  if (!roomId) {
+    throw redirect("/salas")
+  }
+
   useEffect(() => {
     // Puedes realizar alguna acción al cargar la sala
     console.log(`Cargando la sala con ID: ${roomId}`);
