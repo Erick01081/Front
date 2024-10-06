@@ -10,7 +10,7 @@ const routes = {
   '/configuraciones': ConfiguracionesPage,
   '/puntajes': Puntajes,
   '/perfil': UserProfile,
-  '/ver-salas': VerSalas,
+  '/ver-salas': VerSalas
 };
 
 export default routes;

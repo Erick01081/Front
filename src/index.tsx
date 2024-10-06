@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import VerSalasPage from './pages/VerSalas';
 import HomePage from './pages/Home';
-import ConfiguracionesPage from './pages/Configuraciones';
+import ConfiguracionesPage from './pages/configuraciones';
 import SalaPage from './pages/sala/[id]';
 import GameSettings from './components/GameSettings';
 
@@ -15,6 +15,7 @@ import {
 
 import "./index.css";
 import Puntajes from './pages/Puntajes';
+import GamePage from './pages/game/[id]';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
     path: "/sala/:roomId/settings",
     element: <GameSettings />
   },
+  {
+    path: "/game/:gameId",
+    element: <GamePage />
+  }
   
 ]);
 
