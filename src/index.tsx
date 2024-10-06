@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import VerSalasPage from './pages/VerSalas';
 import HomePage from './pages/Home';
-import ConfiguracionesPage from './pages/Configuraciones';
+import ConfiguracionesPage from './pages/configuraciones';
 import SalaPage from './pages/sala/[id]';
 import GameSettings from './components/GameSettings';
 
